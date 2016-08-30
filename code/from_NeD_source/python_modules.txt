@@ -1,0 +1,5 @@
+List of Python modules necessary to run NeD:
+django
+png(this is included in the NeD_source archive, within the mysite directory)
+numpy
+webbrowser
