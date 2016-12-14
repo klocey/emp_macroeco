@@ -61,9 +61,9 @@ for i, tlevel in enumerate(tlevels):
         df2 = df[df['n'] == n]
         sess = df2['ses']
 
-        p97 = np.percentile(sess, 80)
+        p97 = np.percentile(sess, 97.5)
         ses97.append(p97)
-        p2 = np.percentile(sess, 20)
+        p2 = np.percentile(sess, 2.5)
         ses2.append(p2)
 
         print n, np.mean(sess)
@@ -75,5 +75,5 @@ plt.xlabel('# of randomly selected columns, '+'$log$'+r'$_{10}$', fontsize=10)
 plt.ylabel('SES', fontsize=16)
 
 plt.subplots_adjust(wspace=0.4, hspace=0.4)
-plt.savefig(mydir + 'GitHub/emp_nested/figures/EMP' + tlevel+ '-_scaling.png', dpi=600, bbox_inches = "tight")
+plt.savefig(mydir + 'GitHub/emp_nested/figures/EMP_scaling.png', dpi=600, bbox_inches = "tight")
 plt.close()
