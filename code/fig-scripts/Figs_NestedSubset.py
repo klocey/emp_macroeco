@@ -40,13 +40,16 @@ for i, tlevel in enumerate(tlevels):
 
         print n, np.mean(nodfs)
 
-    plt.fill_between(np.log10(ns), nodf2, nodf97, interpolate=True, alpha=0.6, color = colors[i], label=tlevel)
+    plt.fill_between(np.log10(ns), nodf2, nodf97, interpolate=True, alpha=0.99, color = colors[i], label=tlevel)
 
 plt.tick_params(axis='both', which='major', labelsize=8)
 plt.xlabel('# of randomly selected columns, '+'$log$'+r'$_{10}$', fontsize=10)
 plt.ylabel('NODF', fontsize=16)
 
 plt.legend(bbox_to_anchor=(-0.04, 1.05, 2.48, .2), loc=10, ncol=5, mode="expand",prop={'size':10})
+
+tlevels.reverse()
+colors.reverse()
 
 ax = fig.add_subplot(2,2,2)
 for i, tlevel in enumerate(tlevels):
@@ -68,7 +71,7 @@ for i, tlevel in enumerate(tlevels):
 
         print n, np.mean(sess)
 
-    plt.fill_between(np.log10(ns), ses2, ses97, interpolate=True, alpha=0.6, color = colors[i], label=tlevel)
+    plt.fill_between(np.log10(ns), ses2, ses97, interpolate=True, alpha=0.99, color = colors[i], label=tlevel)
 
 plt.tick_params(axis='both', which='major', labelsize=8)
 plt.xlabel('# of randomly selected columns, '+'$log$'+r'$_{10}$', fontsize=10)
