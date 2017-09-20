@@ -33,9 +33,10 @@ for fname in gfiles:
     nullNODFs_RC = []
 
     for i in range(10):
-        for i in range(10):
-            np.random.shuffle(m)
-            #m = m[:, np.random.permutation(m.shape[1])]
+        #np.random.shuffle(m)
+        #m = m[:, np.random.permutation(m.shape[1])]
+        for j in range(m.shape[1]):
+            np.random.shuffle(m[:,j])
 
         RC, R, C = nodf.NODF(m)
         nullNODFs_R.append(R)
@@ -55,7 +56,7 @@ for fname in gfiles:
     elif fname == 'Saline': n = 'Saline'
     elif fname == 'Non-saline': n = 'Nonsaline'
 
-    outlist = [n, 'phylum', MEAN_R, STDEV_R, obsR]
+    outlist = [n, 'phylum', MEAN_C, STDEV_C, obsC]
     outlist = str(outlist).strip('[]')
     outlist = outlist.replace(" ", "")
     outlist = outlist.replace("'", "")
